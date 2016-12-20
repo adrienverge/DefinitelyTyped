@@ -4215,10 +4215,9 @@ declare namespace webdriver {
      * @param {...string} var_args The sequence of keys to
      *     type. All arguments will be joined into a single sequence (var_args is
      *     permitted for convenience).
-     * @return {!webdriver.promise.Promise} A promise that will be resolved when all
-     *     keys have been typed.
+     * @returns {!webdriver.WebElement} The element itself.
      */
-    sendKeys(...var_args: string[]): webdriver.promise.Promise<void>;
+    sendKeys(...var_args: string[]): WebElement;
 
     /**
      * Schedules a command to query for the tag/node name of this element.
@@ -4324,10 +4323,9 @@ declare namespace webdriver {
      * Schedules a command to clear the {@code value} of this element. This command
      * has no effect if the underlying DOM element is neither a text INPUT element
      * nor a TEXTAREA element.
-     * @return {!webdriver.promise.Promise} A promise that will be resolved when
-     *     the element has been cleared.
+     * @returns {!webdriver.WebElement} The element itself.
      */
-    clear(): webdriver.promise.Promise<void>;
+    clear(): WebElement;
 
     /**
      * Schedules a command to test whether this element is currently displayed.
@@ -4650,10 +4648,9 @@ declare namespace webdriver {
      *
      * @param {...(string|!webdriver.promise.Promise<string>)} var_args The sequence
      *     of keys to type. All arguments will be joined into a single sequence.
-     * @return {!webdriver.promise.Promise.<void>} A promise that will be resolved
-     *     when all keys have been typed.
+     * @returns {!webdriver.WebElement} The element itself.
      */
-    sendKeys(...var_args: Array<string | webdriver.promise.Promise<string>>): webdriver.promise.Promise<void>;
+    sendKeys(...var_args: Array<string | webdriver.promise.Promise<string>>): WebElement;
 
     /**
      * Schedules a command to query for the tag/node name of this element.
@@ -4763,10 +4760,9 @@ declare namespace webdriver {
      * Schedules a command to clear the `value` of this element. This command has
      * no effect if the underlying DOM element is neither a text INPUT element
      * nor a TEXTAREA element.
-     * @return {!promise.Promise<void>} A promise that will be resolved
-     *     when the element has been cleared.
+     * @returns {!webdriver.WebElement} The element itself.
      */
-    clear(): webdriver.promise.Promise<void>;
+    clear(): WebElement;
 
     /**
      * Schedules a command to test whether this element is currently displayed.

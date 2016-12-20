@@ -790,7 +790,10 @@ function TestWebElement() {
     var stringPromise: webdriver.promise.Promise<string>;
     var booleanPromise: webdriver.promise.Promise<boolean>;
 
-    voidPromise = element.clear();
+    element = element.clear();
+    element = element.sendKeys();
+    element = element.clear().sendKeys('ABC').clear().sendKeys('DEF');
+
     voidPromise = element.click();
 
     element = element.findElement(webdriver.By.id('ABC'));
@@ -809,8 +812,8 @@ function TestWebElement() {
     booleanPromise = element.isDisplayed();
     booleanPromise = element.isEnabled();
     booleanPromise = element.isSelected();
-    voidPromise = element.sendKeys('A', 'B', 'C');
-    voidPromise = element.sendKeys(stringPromise, stringPromise, stringPromise);
+    element = element.sendKeys('A', 'B', 'C');
+    element = element.sendKeys(stringPromise, stringPromise, stringPromise);
     voidPromise = element.submit();
     element.getId().then(function (id: string) { });
     element.getRawId().then(function (id: string) { });
